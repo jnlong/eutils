@@ -1,8 +1,10 @@
 {
-    "name": "eutils",
+    "name": "@jnlong/eutils",
     "version": "0.8.0",
+    "author": "jnlong",
     "description": "js tools, css tools；整理前端常用js工具集、css通用样式库；减少项目中公共库的重复开发；css reset, css common; js utils, cookie、browser detector、imglazy、date format loadscript checktype urlparse",
     "main": "dist/eutils.min.js",
+    "keywords": "js utils css reset, css common; js utils, cookie、browser detector、imglazy、date format loadscript checktype urlparse",
     "directories": {
         "example": "example"
     },
@@ -45,6 +47,5 @@
         "type": "git",
         "url": "git@gitee.com:haoweb/eutils.git"
     },
-    "author": "kevin",
     "license": "MIT"
 }
