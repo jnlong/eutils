@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>eutils-example1</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <style lang="less">
+        .main {
+            padding: 15px 0;
+        }
+
+        .head {
+            text-align: center;
+        }
+        .title {
+            line-height: 40px;
+            text-indent: 15px;
+            font-size: 20px;
+        }
+        .title:after {
+            content: "";
+            display: block;
+            height: 15px;
+            background-color: #eee;
+        }
+        .content {
+            padding: 15px;
+        }
+        .content .res {
+            line-height: 30px;
+        }
+        .content .res span:nth-of-type(n+2) {
+            padding-left: 10px;
+            color: blue;
+        }
+        .iptwp {
+            height: 40px;
+            line-height: 40px;
+        }
+        .iptwp input {
+            flex: 1;
+            text-indent: 10px;
+        }
+        .iptwp input, .iptwp button {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .iptwp input:focus, .iptwp button:focus {
+            outline: none;
+        }
+        .iptwp button {
+            width: 90px;
+            margin-left: 10px;
+            text-align: center;
+            background-color: #2d8cf0;
+            color: #fff;
+        }
+    </style>
+    <!-- eutils -->
+    <link rel="stylesheet" type="text/css" href="../dist/eutils.min.css"></link>
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="head">eutils</h1>
+
+        <h2 class="title">log</h2>
+        <div class="content">
+            <p class="flex iptwp">
+                <input type="text" id="iptlog" value="test">
+                <button id="btnlog">测试</button>
+            </p>
+            <p class="res"><span>结果: </span><span id="reslog"></span></p>
+        </div>
+
+        <h2 class="title">date.format</h2>
+        <div class="content">
+            <p class="flex iptwp">
+                <input type="text" id="iptdateformat" value="Mon May 27 2019 20:5:8.108 GMT+0800">
+                <button id="btndateformat">测试</button>
+            </p>
+            <p class="res"><span>结果: </span><span id="resdateformat"></span></p>
+        </div>
+    </div>
+
+</body>
+</html>

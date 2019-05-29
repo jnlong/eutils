@@ -1,0 +1,50 @@
+{
+    "name": "eutils",
+    "version": "0.8.0",
+    "description": "js tools, css tools；整理前端常用js工具集、css通用样式库；减少项目中公共库的重复开发",
+    "main": "dist/eutils.min.js",
+    "directories": {
+        "example": "example"
+    },
+    "dependencies": {
+        "html-webpack-plugin": "^3.2.0",
+        "normalize.css": "^8.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "autoprefixer-loader": "^2.1.0",
+        "babel-loader": "^8.0.6",
+        "babel-preset-env": "^1.7.0",
+        "chalk": "^2.4.2",
+        "css-loader": "^2.1.1",
+        "detector": "^2.5.0",
+        "fecha": "^3.0.3",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-clean-css": "^2.0.13",
+        "gulp-less": "^3.3.2",
+        "gulp-rename": "^1.2.2",
+        "less-loader": "^5.0.0",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.32.2",
+        "webpack-cli": "^3.3.2",
+        "webpack-dev-server": "^3.4.1",
+        "webpack-merge": "^4.2.1"
+    },
+    "scripts": {
+        "dev": "webpack-dev-server --open --inline --hot --watch --compress --history-api-fallback --port 8088 --config build/webpack.dev.config.js",
+        "dist:dev": "webpack --config ./build/webpack.pro.config.js",
+        "dist:style": "gulp --gulpfile build/build-style.js",
+        "build": "npm run dist:dev && npm run dist:style"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitee.com:haoweb/eutils.git"
+    },
+    "author": "kevin",
+    "license": "MIT"
+}
