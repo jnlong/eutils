@@ -1,16 +1,16 @@
 {
     "name": "eutils",
     "version": "0.8.0",
-    "description": "js tools, css tools；整理前端常用js工具集、css通用样式库；减少项目中公共库的重复开发",
+    "description": "js tools, css tools；整理前端常用js工具集、css通用样式库；减少项目中公共库的重复开发；css reset, css common; js utils, cookie、browser detector、imglazy、date format loadscript checktype urlparse",
     "main": "dist/eutils.min.js",
     "directories": {
         "example": "example"
     },
     "dependencies": {
-        "html-webpack-plugin": "^3.2.0",
-        "normalize.css": "^8.0.1"
     },
     "devDependencies": {
+        "html-webpack-plugin": "^3.2.0",
+        "normalize.css": "^8.0.1",
         "@babel/core": "^7.0.0",
         "@babel/plugin-proposal-optional-chaining": "^7.0.0",
         "@babel/plugin-syntax-dynamic-import": "^7.0.0",
