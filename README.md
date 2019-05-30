@@ -2,11 +2,13 @@
 
 该项目整理了前端比较常用的工具集，包括js工具和css工具；
 当我们新建一个前端项目时，只需要引入这个npm包，就可以省去很多写工具的重复工作；
+源码地址：https://github.com/jnlong/eutils
 
 # 项目规范
-函数使用小驼峰方式命名、对象使用大驼峰方式命名;
-项目使用webpack构建，支持按需引入
-支持直接引入编译前的源文件：less文件、es6文件
+* 函数使用小驼峰方式命名
+* 对象使用大驼峰方式命名
+* 项目使用webpack构建，支持按需引入
+* 支持直接引入编译前的源文件：less文件、es6文件
 
 # 安装
 $ npm install @jnlong/eutils
@@ -39,6 +41,8 @@ $ npm install @jnlong/eutils
 ## js
 
 ### tools
+为了方便调用，tools目录的API生成在eutils根目录，调用方法：eutils.log(), eutils.toast(msg)
+
 * log(args) 打印日志，可以通过config.debug来全局控制是否打印的开关，实现只在测试环境打印日志
 * deepCopy(obj) object深拷贝
 * checkLs() 判断所在浏览器是否支持localStorage
@@ -46,6 +50,8 @@ $ npm install @jnlong/eutils
 * versionCompare(v1, v2): v1=v2, 返回0；v1大于v2, 返回1；v1小于v2，返回-1；
 
 ### date
+调用方法：etuils.date.format();
+
 * format(new Date(), 'MM-DD-YYYY [at] HH:mm') 日期格式化
 * calDuration(d1, d2) 计算时间2比时间1，间隔的时长；如 1年前，3个月前，20天前，5分钟前，2秒前
 * add(new Date(), unit, count) 对一个日期对象，加上某个单位的数量；比如给一个日期加3天：add(new Date(), 'd', 3)
@@ -64,6 +70,8 @@ $ npm install @jnlong/eutils
 * queryToJson(url)
 
 ### load
+为了方便调用，load目录的API生成在eutils根目录，调用方法：eutils.loadCss(), eutils.loadScript()
+
 * loadCss(href, cb, id) 动态加载外部css链接，并且通过id校验来避免重复添加
 * loadScript(src, cb, id)
 * loadImg(arr, cb, id)
@@ -82,6 +90,7 @@ $ npm install @jnlong/eutils
 
 * 调用 detector.parse(ua)
 * 返回结果
+
 ``` javascript
 {
     device: {
@@ -121,6 +130,18 @@ $ npm install @jnlong/eutils
 * common：常用样式
 * reset
 * normalize.css
+
+## 用法
+在 example/main.js中编写了每一个API的用法，可以打开文件查看。
+
+## example
+可以运行样例查看example
+
+* ```git clone git@github.com:jnlong/eutils.git```
+* ```cd eutitls```
+* ```npm install --save-dev```
+* ```npm run dev```
+* 用浏览器打开 ```http://localhost:8088/```查看example，也可以同时打开浏览器的控制台查看console信息
 
 # 参考
 * 工具集utils:  https://github.com/cd-dongzi/utils （star 190，css js）

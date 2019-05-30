@@ -11,29 +11,31 @@
    3. 当页面滚动过程中，在视口的img会自动展示属性data-lazy设置的图片。
  */
 
-var lazyImg = function() {
+var lazyImg = function(opt = {}) {
     var me = this;
+
+    me.lazyTime = opt.lazyTime; // 页面滚动到图片时，延迟加载时间，单位毫秒
     me.threshold = 20;
     me.init();
 };
 
 lazyImg.prototype = {
-    init: function() {
+    init() {
         var me = this;
-        me.setImages();
         me.height = window.innerHeight || document.documentElement.clientHeight;
         me.addEvent();
+        me.setImages();
     },
-    setImages: function() {
+    setImages() {
         var me = this;
         var images = document.querySelectorAll('img[data-lazy]');
         me.images = Array.prototype.slice.apply(images);
         me.processLoad();
     },
-    getImages: function() {
+    getImages() {
         var me = this;
     },
-    loadImage: function(img) {
+    loadImage(img) {
         var src = img.getAttribute('data-lazy');
         img.src = src;
         img.removeAttribute('data-lazy');
@@ -41,12 +43,23 @@ lazyImg.prototype = {
         //     img.style.display = "block";
         // },350);
     },
-    isElementInViewport: function(el) {
+    loadImageEntry(img) {
+        var me = this;
+
+        if (me.lazyTime) {
+            setTimeout(function() {
+                me.loadImage(img);
+            }, me.lazyTime)
+        } else {
+            me.loadImage(img);
+        }
+    },
+    isElementInViewport(el) {
         var me = this;
         var rect = el.getBoundingClientRect();
         var viewportHeight = me.height;
 
-        if (rect.top >= 0) {
+        if (rect.top >= -200) {
             if (rect.top <= viewportHeight) {
                 return true;
             }
@@ -57,18 +70,18 @@ lazyImg.prototype = {
         }
         return false;
     },
-    processLoad: function() {
+    processLoad() {
         var me = this;
         for (var i = 0; i < me.images.length;) {
             if (me.isElementInViewport(me.images[i])) {
-                me.loadImage(me.images[i]);
+                me.loadImageEntry(me.images[i]);
                 me.images.splice(i, 1);
             } else {
                 i++;
             }
         }
     },
-    addEvent: function() {
+    addEvent() {
         var me = this;
 
         window.addEventListener('orientationchange', reset);

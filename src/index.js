@@ -10,7 +10,7 @@ const rq = require.context('./js/', true, /.js$/);
 
 rq.keys().forEach(rqKey => {
     let attr = rqKey.replace('./', '').replace('.js', '');
-    if (attr === 'tools') {
+    if (['tools', 'load'].indexOf(attr) != -1) {
         tools = rq(rqKey);
         for (toolsKey in tools) {
             m[toolsKey] = tools[toolsKey];

@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>eutils-example1</title>
+    <title>eutils-example</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
-    <style lang="less">
+    <style>
         .main {
             padding: 15px 0;
         }
@@ -58,13 +58,36 @@
             background-color: #2d8cf0;
             color: #fff;
         }
+        .loadimgwp, .lazyimgwp {
+            border-radius: 6px;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .loadimgwp img, .lazyimgwp img {
+            display: block;
+            width: 100%;
+        }
+        .loadimgwp img {
+            margin-top: 10px;;
+        }
+        .lazyimgwp {
+            position: relative;
+            padding-top: 56.2%;
+            background-color: #eee;
+        }
+        .lazyimgwp img {
+            position: absolute;
+            width: 100%;
+            left:0;
+            top:0;
+        }
     </style>
     <!-- eutils -->
     <link rel="stylesheet" type="text/css" href="../dist/eutils.min.css"></link>
 </head>
 
 <body>
-    <div class="main">
+    <div class="main" id="main">
         <h1 class="head">eutils</h1>
 
         <h2 class="title">log</h2>
@@ -84,7 +107,22 @@
             </p>
             <p class="res"><span>结果: </span><span id="resdateformat"></span></p>
         </div>
-    </div>
+        <h2 class="title">loadImg</h2>
+        <div class="content">
+            <p class="flex iptwp">
+                <input type="text" id="iptloadimg" value="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=623936011,422984882&fm=26&gp=0.jpg">
+                <button id="btnloadimg">测试</button>
+            </p>
+            <div id="loadimgwp" class="loadimgwp"></div>
+        </div>
 
+        <h2 class="title">lazyImg</h2>
+        <div class="content lazyimgcontentwp" id="lazyimgcontentwp"></div>
+    </div>
+    <script type="text/tpl" id="imgtpl">
+        <div class="lazyimgwp">
+            <img  data-lazy="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559221761685&di=0003ee9dc855ac10ace1b90caf2802e1&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F1e14a1a3603efeb1386536b7885f505999563b391b316a-gimo9n_fw658" src="" alt=""/>
+        </div>
+    </script>
 </body>
 </html>

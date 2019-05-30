@@ -1,7 +1,7 @@
 
 var type = require('./type');
 
-function loadElement(eleType, urlAttr, url, cb, id) {
+function loadElement(eleType, urlAttr, url, cb, id, append = true) {
     // 通过elemengt的id来防止重复加载相同的文件
     if (!url) {
         return;
@@ -16,19 +16,20 @@ function loadElement(eleType, urlAttr, url, cb, id) {
     }
     tag.setAttribute(urlAttr, url);
     id && (tag.setAttribute('id', id));
-    document.body.appendChild(tag);
+    append && document.body.appendChild(tag);
+    return tag;
 }
 
 module.exports = {
     loadCss: function (href, cb, id) {
-        loadElement('link', 'href', href, cb, id);
+        return loadElement('link', 'href', href, cb, id);
     },
 
     loadScript: function (src, cb, id) {
-        loadElement('script', 'src', src, cb, id);
+        return loadElement('script', 'src', src, cb, id);
     },
 
-    loadImg: function (src, cb, id) {
-        loadElement('img', 'src', src, cb, id);
+    loadImg: function (src, cb, id, append = true) {
+        return loadElement('img', 'src', src, cb, id, append);
     }
 }
