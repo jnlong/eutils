@@ -9,7 +9,7 @@
 支持直接引入编译前的源文件：less文件、es6文件
 
 # 安装
-$ npm install eutils
+$ npm install @jnlong/eutils
 
 # 使用
 ## js
