@@ -17,7 +17,7 @@ module.exports = {
      */
     format: fecha.default.format,
     /**
-     * 计算时间2比时间1，间隔的时长；如 1年前，3个月前，20天前，5分钟前，2秒前
+     * 计算 “时间1” 比 “时间2”，间隔的时长；如 1年前，3个月前，20天前，5分钟前，2秒前
      * @params {date1} Date
      * @params {date2} Date 默认是当前时间
      */
@@ -26,11 +26,16 @@ module.exports = {
         let res = '';
         let diff;
         let cur;
+        let text = '前';
 
         if (type.isDate(date1) && type.isDate(date2)){
             diff = date2.getTime() - date1.getTime();
 
-            console.log(date2, date1, diff);
+            if (diff < 0) {
+                diff = -1 * diff;
+                text = '后';
+            }
+
             if (diff >= days * 365) {
                 res = Math.floor(diff / (days * 365)) + '年';
             }
@@ -51,7 +56,7 @@ module.exports = {
         } else {
             return '';
         }
-        return `${res}前`;
+        return `${res}${text}`;
     },
 
     /**

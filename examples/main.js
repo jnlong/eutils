@@ -1,8 +1,11 @@
 import eutils from '../src/index';
+import config from './config';
 
 var type = eutils.type;
 var log = eutils.log;
 
+// 全局控制console
+window.isDebug = config.isDebug;
 window.eutils = eutils;
 
 // log
@@ -26,7 +29,14 @@ document.getElementById('btndateformat').addEventListener('click', function() {
     document.getElementById('resdateformat').innerHTML = res;
 });
 
-// other
-eutils.cookie.set({name: 'bid', value: 'bid-123456', days: 30});
-log('cookie-bid', eutils.cookie.get('bid'));
-log('ulog', eutils.date.format(new Date(), 'YYYY-MM-DD HH:mm:ss.SSS'));
+// date.add data.calDuration
+console.group('data');
+var addDate = eutils.date.add(eutils.date.add(new Date(), 'M', 5), 'd', 20);
+log('data.add', addDate);
+log('data.format', eutils.date.format(addDate, 'YYYY-MM-DD HH:mm:ss.SSS'));
+log('data.calDuration', eutils.date.calDuration(addDate));
+console.groupEnd();
+
+// cookie
+eutils.cookie.set({name: 'uid', value: 'uid-123456', days: 30});
+log('cookie-get', eutils.cookie.get('uid'));
