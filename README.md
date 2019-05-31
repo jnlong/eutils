@@ -7,7 +7,7 @@
 * [version](https://github.com/jnlong/eutils/blob/master/version.md)
 * [collection](https://github.com/jnlong/eutils/blob/master/collection.md)
 
-![](https://github.com/jnlong/eutils/doc/nt.png)
+![](https://github.com/jnlong/eutils/blob/master/doc/nt.png?raw=true)
 
 # 项目规范
 * 函数使用小驼峰方式命名

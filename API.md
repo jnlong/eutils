@@ -8,7 +8,7 @@
 * 参数：log(args)，接受多个参数;
 * 打印日志，可以通过```window.isDebug```来全局控制是否打印的开关，实现只在测试环境打印日志；
 * 为了提高可读性，在打印时对一个参数设置了颜色
-![](https://github.com/jnlong/eutils/doc/log.png)
+![](https://github.com/jnlong/eutils/blob/master/doc/log.png?raw=true)
 
 ## deepCopy
 object深拷贝，使用深拷贝的目的是：避免复制后的对象的更改，传递给源对象；
@@ -32,7 +32,7 @@ data|Object|执行深拷贝后的对象
 ## toast
 toast弹窗，调用后弹出一个toast；
 调用方法：eutils.toast('我是一个toast');
-![](https://github.com/jnlong/eutils/doc/toast.png)
+![](https://github.com/jnlong/eutils/blob/master/doc/toast.png?raw=true)
 
 ## versionCompare
 调用方法：eutils.versionCompare(v1, v2);
