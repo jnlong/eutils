@@ -1,8 +1,11 @@
 # 项目介绍
-
 该项目整理了前端比较常用的工具集，包括js工具和css工具；
 当我们新建一个前端项目时，只需要引入这个npm包，就可以省去很多写工具的重复工作；
-源码地址：https://github.com/jnlong/eutils
+
+* [源码地址](https://github.com/jnlong/eutils)
+* [API](https://github.com/jnlong/eutils/blob/master/API.md)
+* [version](https://github.com/jnlong/eutils/blob/master/version.md)
+* [collection](https://github.com/jnlong/eutils/blob/master/collection.md)
 
 # 项目规范
 * 函数使用小驼峰方式命名
@@ -37,99 +40,6 @@ $ npm install @jnlong/eutils
     @import 'eutils/src/style/index.less';
     @import 'eutils/src/style/index.less';
 ```
-# 功能
-## js
-
-### tools
-为了方便调用，tools目录的API生成在eutils根目录，调用方法：eutils.log(), eutils.toast(msg)
-
-* log(args) 打印日志，可以通过config.debug来全局控制是否打印的开关，实现只在测试环境打印日志
-* deepCopy(obj) object深拷贝
-* checkLs() 判断所在浏览器是否支持localStorage
-* toast(msg) toast弹窗
-* versionCompare(v1, v2): v1=v2, 返回0；v1大于v2, 返回1；v1小于v2，返回-1；
-
-### date
-调用方法：etuils.date.format();
-
-* format(new Date(), 'MM-DD-YYYY [at] HH:mm') 日期格式化
-* calDuration(d1, d2) 计算时间2比时间1，间隔的时长；如 1年前，3个月前，20天前，5分钟前，2秒前
-* add(new Date(), unit, count) 对一个日期对象，加上某个单位的数量；比如给一个日期加3天：add(new Date(), 'd', 3)
-
-### cookie
-* set(name, value, hours, root)
-* get({name: '', value: '', days: 3, path: '/'})
-* del(name)
-
-### urlparse
-* search(name, url)
-* add(name, value, url)
-* remove(name, url)
-* replace(name, newValue, url)
-* jsonToQuery(obj)
-* queryToJson(url)
-
-### load
-为了方便调用，load目录的API生成在eutils根目录，调用方法：eutils.loadCss(), eutils.loadScript()
-
-* loadCss(href, cb, id) 动态加载外部css链接，并且通过id校验来避免重复添加
-* loadScript(src, cb, id)
-* loadImg(arr, cb, id)
-
-### type
-* isSupportWebP()
-* isString(obj)
-* isNumber(obj)
-* isArray(obj)
-* isFunction(obj)
-* isDate(obj)
-* checkType(str, type)：正则校验: IP、QQ、english、chinese、tel、phone、postal、email、money、url、date
-
-### detector
-根据ua判断浏览器环境、版本号
-
-* 调用 detector.parse(ua)
-* 返回结果
-
-``` javascript
-{
-    device: {
-        name: "iphone",
-        version: -1,
-        fullVersion: "-1",
-        [iphone]: -1
-    },
-    os: {
-        name: "ios",
-        version: 6.1,
-        fullVersion: "6.1",
-        [ios]: 6.1
-    },
-    browser: {
-        name: "chrome":
-        version: 26.0,
-        fullVersion: "26.0.1410.50",
-        mode: 26.0,
-        fullMode: "26.0.1410.50",
-        compatible: false,
-        [chrome]: 26.0
-    },
-    engine: {
-        name: "webkit",
-        version: 536.26,
-        fullVersion: "536.26",
-        mode: 523.26,
-        fullMode: "523.26",
-        compatible: false,
-        [webkit]: 536.26
-    }
-}
-```
-
-## css
-* common：常用样式
-* reset
-* normalize.css
 
 ## 用法
 在 example/main.js中编写了每一个API的用法，可以打开文件查看。

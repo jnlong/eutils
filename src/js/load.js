@@ -21,8 +21,8 @@ function loadElement(eleType, urlAttr, url, cb, id, append = true) {
 }
 
 module.exports = {
-    loadCss: function (href, cb, id) {
-        return loadElement('link', 'href', href, cb, id);
+    loadCss: function (href, id) {
+        return loadElement('link', 'href', href, null, id);
     },
 
     loadScript: function (src, cb, id) {

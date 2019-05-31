@@ -1,7 +1,6 @@
 import eutils from '../src/index';
 import config from './config';
 
-var type = eutils.type;
 var log = eutils.log;
 
 // 全局控制console
@@ -22,7 +21,7 @@ document.getElementById('btndateformat').addEventListener('click', function() {
     var d = new Date(iptdateformat.value);
     var res = '输入的日期格式不正确！';
 
-    if (type.isDate(d)) {
+    if (eutils.isDate(d)) {
         res = eutils.date.format(d, 'YYYY-MM-DD HH:mm:ss.SSS');
     }
     document.getElementById('resdateformat').innerHTML = res;

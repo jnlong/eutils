@@ -1,68 +1,88 @@
-
-/* 文本排版 */
-.wn { /* 强制不换行 */
-    word-wrap:normal;
-    white-space:nowrap;
-}
-.wb { /* 强制换行 */
-    white-space:normal;
-    word-wrap:break-word;
-    word-break:break-all;
-}
-.ellipsis { /* 多出部分用省略号表示 , 用于一行 */
-    overflow:hidden;
-    word-wrap:normal;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+/* 文本 */
+.word-nowrap {
+    /* 强制不换行 */
+    word-wrap: normal;
+    white-space: nowrap;
 }
 
-.ellipsis-mutiple(@num: 1) { /* 适用于webkit内核和移动端 */
+.word-wrap {
+    /* 强制换行 */
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.ellipsis {
+    /* 多出部分用省略号表示 , 用于一行 */
+    overflow: hidden;
+    word-wrap: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-mutiple(@num: 1) {
+    /* 适用于webkit内核和移动端 */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: @num;
     overflow: hidden;
 }
+
 .ellipsis2 {
     .ellipsis-mutiple(2);
 }
+
 .ellipsis3 {
     .ellipsis-mutiple(3);
 }
 
 /* 布局 */
 .flex {
-    display:flex;
+    display: flex;
 }
+
 .flex-center {
     .flex();
     justify-content: center;
 }
+
 .flex-middle {
     .flex();
     align-items: center;
 }
+
 .flex-cm {
     .flex();
     justify-content: center;
     align-items: center;
 }
+
 .center { /* 在父元素中，水平、垂直居中 */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-.mask {
+
+/* 组件 */
+.mask { /* 遮罩层 */
     position: fixed;
     width: 100%;
     height: 100%;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     background: rgba(0, 0, 0, 0.65);
     z-index: 999;
 }
-/* 背景图设置 */
-.bg {
+.toastwp { /* toast 弹窗 */
+    position:fixed;display:none;top:50%;left:0;right:0;margin:auto;min-width:100px;color:#f0f0f0;font-size:14px;text-align:center;animation:.3s fadeIn both;z-index:10001;
+}
+.toastwp span {
+    padding: 10px 12px; background-color: rgba(0, 0, 0, 0.8); border-radius: 4px;
+}
+
+/* 其它 */
+.bg { /* 背景图设置 */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center center;

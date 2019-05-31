@@ -67,25 +67,12 @@ module.exports = {
      */
     toast: function (msg) {
         let tag = document.getElementById('cn_toast');
-        let style = document.getElementById('cn_toast_style');
 
-        // 校验：避免重复加载style
-        if (!style) {
-            style = document.createElement('style');
-            style.setAttribute('id', 'cn_toast_style');
-            style.innerHTML = `
-                #cn_toast {
-                    position:fixed;display:none;top:50%;left:0;right:0;margin:auto;min-width:100px;color:#f0f0f0;font-size:14px;text-align:center;animation:.3s fadeIn both;z-index:10001;
-                }
-                #cn_toast span {
-                    padding: 10px 12px; background-color: rgba(0, 0, 0, 0.8); border-radius: 4px;
-                `;
-            document.body.appendChild(style);
-        }
         // 校验：避免重复加载标签
         if (!tag) {
             tag = document.createElement('div');
             tag.setAttribute('id', 'cn_toast');
+            tag.setAttribute('class', 'toastwp');
             document.body.appendChild(tag);
         }
         tag.innerHTML = `<span>${msg}</span>`;
@@ -117,5 +104,4 @@ module.exports = {
         }
         return 0;
     }
-
 }
