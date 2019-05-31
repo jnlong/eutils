@@ -8,7 +8,7 @@
 * 参数：log(args)，接受多个参数;
 * 打印日志，可以通过```window.isDebug```来全局控制是否打印的开关，实现只在测试环境打印日志；
 * 为了提高可读性，在打印时对一个参数设置了颜色
-![](http://cp01-wise99.epc.baidu.com:8200/server/../Public/Uploads/2019-05-31/5cf0a00b8f255.png)
+![](https://github.com/jnlong/eutils/doc/log.png)
 
 ## deepCopy
 object深拷贝，使用深拷贝的目的是：避免复制后的对象的更改，传递给源对象；
@@ -32,7 +32,7 @@ data|Object|执行深拷贝后的对象
 ## toast
 toast弹窗，调用后弹出一个toast；
 调用方法：eutils.toast('我是一个toast');
-![](http://cp01-wise99.epc.baidu.com:8200/server/../Public/Uploads/2019-05-31/5cf0a32aee187.png)
+![](https://github.com/jnlong/eutils/doc/toast.png)
 
 ## versionCompare
 调用方法：eutils.versionCompare(v1, v2);
@@ -221,7 +221,7 @@ src|String|是|img链接
 cb|Functon|是|资源下载成功的回调函数，如果不需要回调，可以传null
 id|String|否|不传参数，则不做重复添加的校验
 
-## type
+# type
 为了方便调用，type目录的API生成在eutils根目录，调用方法如：eutils.isSupportWebP()
 ## isSupportWebP
 判断是否支持webp格式的图片
@@ -248,15 +248,16 @@ id|String|否|不传参数，则不做重复添加的校验
 例如：
 eutils.checkType('13812560000', 'phone');  // 返回 true
 etutil.checkType('aaaxxx', 'url'); 		   // 返回false
-## detector
+
+# detector
 根据ua判断浏览器环境、版本号；
-### parse
+## parse
 调用方法，eutils.detector.parse(ua)；
-#### 参数
+### 参数
 参数|类型|必填|说明
 --- | :---: | :---:| ---
 ua|String|否|需要校验的ua，默认是navigator.userAgent
-#### 返回
+### 返回
 返回json，格式如下：
 
 ``` javascript
