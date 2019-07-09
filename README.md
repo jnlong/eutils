@@ -50,7 +50,7 @@ $ npm install @jnlong/eutils
 可以运行样例查看example
 
 * ```git clone git@github.com:jnlong/eutils.git```
-* ```cd eutitls```
+* ```cd eutils```
 * ```npm install --save-dev```
 * ```npm run dev```
 * 用浏览器打开 ```http://localhost:8088/```查看example，也可以同时打开浏览器的控制台查看console信息

@@ -12,7 +12,7 @@ rq.keys().forEach(rqKey => {
     let attr = rqKey.replace('./', '').replace('.js', '');
     if (['tools', 'load', 'type'].indexOf(attr) != -1) {
         tools = rq(rqKey);
-        for (toolsKey in tools) {
+        for (let toolsKey in tools) {
             m[toolsKey] = tools[toolsKey];
         }
     } else {

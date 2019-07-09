@@ -22,4 +22,4 @@ yarn-error.log*
 
 output/
 
-test.md
+test*.md
