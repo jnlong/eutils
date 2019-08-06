@@ -1,6 +1,6 @@
 {
     "name": "@jnlong/eutils",
-    "version": "0.9.8",
+    "version": "0.9.9",
     "author": "jnlong",
     "description": "js tools, css tools；整理前端常用js工具集、css通用样式库；减少项目中公共库的重复开发；css reset, css common; js utils, cookie、browser detector、imglazy、date format loadscript checktype urlparse",
     "main": "dist/eutils.min.js",
