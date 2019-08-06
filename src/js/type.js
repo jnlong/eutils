@@ -9,12 +9,16 @@ function getType (obj) {
 
 module.exports = {
     // 对外函数
-    get: function (obj) {
+    getType: function (obj) {
         return getType(obj);
     },
 
     isSupportWebP: function () {
         return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    },
+
+    isObject: function (obj) {
+        return getType(obj) === 'Object';
     },
 
     isString: function (obj) {

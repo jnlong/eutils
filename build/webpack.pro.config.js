@@ -42,6 +42,7 @@ const config = {
         }]
     },
     plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin()
     ]
 }
 
